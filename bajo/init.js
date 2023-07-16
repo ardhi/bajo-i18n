@@ -5,7 +5,7 @@ import sprintfPostProcessor from '../lib/sprintf-post-processor.js'
 async function init () {
   const { eachPlugins, readConfig, importPkg, getConfig, log } = this.bajo.helper
   const spp = await sprintfPostProcessor.call(this)
-  const _ = await importPkg('lodash::bajo')
+  const { merge, set } = await importPkg('lodash-es::bajo')
   const config = getConfig()
   if (config.lang) this.bajoI18N.config.lng = config.lang
   const opts = getConfig('bajoI18N', { clone: true })
@@ -13,7 +13,7 @@ async function init () {
   await eachPlugins(async function ({ file, name }) {
     const lng = path.basename(file, path.extname(file))
     const content = await readConfig(file)
-    _.merge(this.bajoI18N.resource, _.set({}, lng, _.set({}, name, content)))
+    merge(this.bajoI18N.resource, set({}, lng, set({}, name, content)))
   }, { glob: 'resource/*.*' })
   opts.resources = this.bajoI18N.resource
   opts.defaultNS = 'bajoI18N'
