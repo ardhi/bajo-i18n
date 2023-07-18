@@ -1,5 +1,5 @@
 {
-  "[%s] Internationalization is active now, locale: %s": "[%s] Internasionalisai sekarang sudah aktif, locale: %s",
+  "[%s] Internationalization is active now, locale: %s": "[%s] Internasionalisasi sekarang sudah aktif, locale: %s",
   "Init": "Inisiasi",
   "Start": "Mulai",
   "Error: %s": "Kesalahan: %s",
@@ -28,6 +28,7 @@
   "Saved as '%s'": "Disimpan sbg '%s'",
   "Retrieving...": "Memuat...",
   "You must provide a valid value": "Anda harus memasukkan nilai yang valid",
+  "Connection must have a valid type": "Koneksi harus memiliki sebuah tipe yang valid",
   "[%s] Collect events": "[%] Mengoleksi event-event",
   "[%s] Collect event: %s:%s.%s (%d)": "[%s] Mengoleksi event: %s:%s.%s (%d)",
   "[%s] Setup boot order": "[%s] Setel urutan booting",

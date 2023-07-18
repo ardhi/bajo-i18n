@@ -5,9 +5,9 @@ import sprintfPostProcessor from '../lib/sprintf-post-processor.js'
 async function init () {
   const { eachPlugins, readConfig, importPkg, getConfig, log } = this.bajo.helper
   const spp = await sprintfPostProcessor.call(this)
-  const { merge, set } = await importPkg('lodash-es::bajo')
+  const { merge, set } = await importPkg('lodash-es')
   const config = getConfig()
-  if (config.lang) this.bajoI18N.config.lng = config.lang
+  this.bajoI18N.config.lng = config.lang
   const opts = getConfig('bajoI18N', { clone: true })
   this.bajoI18N.resource = {}
   await eachPlugins(async function ({ file, name }) {
@@ -21,7 +21,7 @@ async function init () {
   // opts.ns = ns
   await i18next.use(spp).init(opts)
   this.bajoI18N.instance = i18next
-  log.debug(`Internationalization is active now, locale: %s`, opts.lng)
+  log.debug('Internationalization is active now, locale: %s', opts.lng)
 }
 
 export default init
