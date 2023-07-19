@@ -10,10 +10,10 @@ async function init () {
   this.bajoI18N.config.lng = config.lang
   const opts = getConfig('bajoI18N', { clone: true })
   this.bajoI18N.resource = {}
-  await eachPlugins(async function ({ file, name }) {
+  await eachPlugins(async function ({ file, plugin }) {
     const lng = path.basename(file, path.extname(file))
     const content = await readConfig(file)
-    merge(this.bajoI18N.resource, set({}, lng, set({}, name, content)))
+    merge(this.bajoI18N.resource, set({}, lng, set({}, plugin, content)))
   }, { glob: 'resource/*.*' })
   opts.resources = this.bajoI18N.resource
   opts.defaultNS = 'bajoI18N'
