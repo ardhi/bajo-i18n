@@ -25,7 +25,7 @@ async function resource (path, args) {
   result = config.pretty ? (await prettyPrint(result, false, false)) : JSON.stringify(result, null, 2)
   if (config.save) {
     const file = `/${path}/${isEmpty(subPath) ? 'all' : subPath}.${config.pretty ? 'txt' : 'json'}`
-    await saveAsDownload(file, stripAnsi(result), 'bajoI18N')
+    await saveAsDownload(file, stripAnsi(result))
   } else console.log(result)
 }
 
