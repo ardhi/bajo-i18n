@@ -6,7 +6,7 @@ async function resource (path, args) {
   const config = getConfig()
   let subPath = args.length === 0 ? '' : `.${args[0].replaceAll(':', '.')}`
   if (isEmpty(subPath)) {
-    let choices = map(keys(this.bajoI18N.resource || {}), k => ({ value: k }))
+    let choices = map(keys(this.bajoI18N.resource ?? {}), k => ({ value: k }))
     const lang = await select({
       message: print.__('Please choose one of these locales:'),
       choices
