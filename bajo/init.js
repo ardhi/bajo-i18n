@@ -8,6 +8,7 @@ async function init () {
   const { merge, set, map, uniq } = await importPkg('lodash-es')
   const config = getConfig()
   this.bajoI18N.config.lng = config.lang
+  this.bajoI18N.config.fallbackLng = config.lang
   this.bajoI18N.config.supportedLngs = uniq(map(this.bajoI18N.config.supportedLngs, l => l.split('-')[0]))
   this.bajoI18N.config.nonExplicitSupportedLngs = true
   const opts = getConfig('bajoI18N', { clone: true })
