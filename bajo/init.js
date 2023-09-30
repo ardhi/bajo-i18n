@@ -3,7 +3,7 @@ import i18next from 'i18next'
 import sprintfPostProcessor from '../lib/sprintf-post-processor.js'
 
 async function init () {
-  const { eachPlugins, readConfig, importPkg, getConfig, log } = this.bajo.helper
+  const { eachPlugins, readConfig, importPkg, getConfig, log, runHook } = this.bajo.helper
   const spp = await sprintfPostProcessor.call(this)
   const { merge, set, map, uniq } = await importPkg('lodash-es')
   const config = getConfig()
@@ -18,6 +18,7 @@ async function init () {
     const main = lng.split('-')[0]
     if (this.bajoI18N.config.supportedLngs.includes(main)) {
       const content = await readConfig(file)
+      await runHook('bajoI18N:beforeResourceMerge', plugin, lng, content)
       merge(this.bajoI18N.resource, set({}, lng, set({}, plugin, content)))
     }
   }, { glob: 'resource/*.*' })
