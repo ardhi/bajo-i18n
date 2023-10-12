@@ -11,7 +11,7 @@
   "Unknown helper '%s.%s'": "Pembantu '%s.%s' tidak dikenal",
   "Unsupported type '%s'": "Tipe '%s' tidak didukung",
   "Can't resolve bajo named '%s', sorry!": "Maaf, tidak bisa menentukan nama bajo '%s'",
-  "File '%s' is NOT a module for repository": "Berkas '%s' BUKAN sebuah modul untuk koleksi",
+  "File '%s' is NOT a module for collection": "Berkas '%s' BUKAN sebuah modul untuk koleksi",
   "Can't parse '%s'": "Tidak bisa mem-parsing '%s'",
   "No config file found": "Tidak ditemukan berkas konfigurasi",
   "Plugin name clash: '%s (%s)' with '%s (%s)'": "Nama plugin '%s (%s)' bentrok dengan '%s (%s)'",
