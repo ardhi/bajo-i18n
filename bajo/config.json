@@ -1,3 +1,11 @@
 {
-  "supportedLngs": ["en", "id"]
+  "supportedLngs": ["en", "id"],
+  "format": {
+    "emptyValue": "",
+    "datetime": { "dateStyle": "medium", "timeStyle": "short" },
+    "date": { "dateStyle": "medium" },
+    "time": { "timeStyle": "short" },
+    "float": { "maximumFractionDigits": 2 },
+    "integer": {}
+  }
 }
