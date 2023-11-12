@@ -15,9 +15,8 @@ function format (value, type, lng, options = {}) {
     const setting = defaultsDeep(options.float, cfg.format.float)
     return new Intl.NumberFormat(lng, setting).format(value)
   }
-  if (['datetime', 'timestamp'].includes(type)) {
+  if (['datetime'].includes(type)) {
     const setting = defaultsDeep(options.datetime, cfg.format.datetime)
-    if (type === 'timestamp') value = new Date(value)
     return new Intl.DateTimeFormat(lng, setting).format(value)
   }
   if (['date'].includes(type)) {

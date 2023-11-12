@@ -1,6 +1,6 @@
 {
   "name": "bajo-i18n",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Internationalization/localization for Bajo Framework",
   "main": "index.js",
   "scripts": {
