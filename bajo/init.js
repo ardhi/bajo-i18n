@@ -5,7 +5,7 @@ import collectResources from '../lib/collect-resource.js'
 async function init () {
   const { importPkg, getConfig, log } = this.bajo.helper
   const spp = await sprintfPostProcessor.call(this)
-  const { map, uniq } = await importPkg('lodash-es')
+  const { map, uniq, isPlainObject, merge, upperFirst } = await importPkg('lodash-es')
   const config = getConfig()
   this.bajoI18N.config.lng = config.lang
   this.bajoI18N.config.fallbackLng = config.lang
@@ -18,6 +18,21 @@ async function init () {
   // opts.ns = ns
   await i18next.use(spp).init(opts)
   this.bajoI18N.instance = i18next
+  this.bajo.transHandler = ({ msg, params = [], options = {} } = {}) => {
+    if (isPlainObject(params[0])) {
+      const ctx = merge({}, params[0] ?? {}, { ns: opts.ns })
+      if (msg.startsWith('validation') && ctx.message && !i18next.exists(msg, { ns: opts.ns })) {
+        const message = ctx.message
+          .replace(/".*?" /, '')
+          .replace(/^is /, '')
+        return upperFirst(message)
+      }
+      msg = i18next.t(msg, ctx)
+    } else {
+      msg = i18next.t(msg, { ns: opts.ns, pkg: opts.pkg, postProcess: 'sprintf', sprintf: params })
+    }
+    return msg
+  }
   log.debug('Internationalization is active now, locale: %s', opts.lng)
 }
 
