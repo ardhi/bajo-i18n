@@ -1,4 +1,4 @@
-async function resource ({ path, args, returnEarly }) {
+async function resource ({ path, args }) {
   const { importPkg, print, getConfig, saveAsDownload } = this.bajo.helper
   const { prettyPrint } = this.bajoCli.helper
   const { get, isEmpty, keys, map } = await importPkg('lodash-es')
