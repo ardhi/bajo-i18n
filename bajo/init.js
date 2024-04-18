@@ -3,9 +3,9 @@ import sprintfPostProcessor from '../lib/sprintf-post-processor.js'
 import collectResources from '../lib/collect-resource.js'
 
 async function init () {
-  const { importPkg, getConfig, log } = this.bajo.helper
+  const { getConfig, log } = this.bajo.helper
   const spp = await sprintfPostProcessor.call(this)
-  const { map, uniq, isPlainObject, merge, upperFirst } = await importPkg('lodash-es')
+  const { map, uniq, isPlainObject, merge, upperFirst } = this.bajo.helper._
   const config = getConfig()
   this.bajoI18N.config.lng = config.lang
   this.bajoI18N.config.fallbackLng = config.lang

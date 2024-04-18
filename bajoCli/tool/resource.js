@@ -1,8 +1,8 @@
 async function resource ({ path, args }) {
   const { importPkg, print, getConfig, saveAsDownload } = this.bajo.helper
   const { prettyPrint } = this.bajoCli.helper
-  const { get, isEmpty, keys, map } = await importPkg('lodash-es')
-  const [stripAnsi, select] = await importPkg('bajo-cli:strip-ansi', 'bajo-cli:@inquirer/select')
+  const { get, isEmpty, keys, map } = this.bajo.helper._
+  const [stripAnsi, select] = await importPkg('bajoCli:strip-ansi', 'bajoCli:@inquirer/select')
   const config = getConfig()
   let subPath = args.length === 0 ? '' : `.${args[0].replaceAll(':', '.')}`
   if (isEmpty(subPath)) {
