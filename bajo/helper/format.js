@@ -21,11 +21,11 @@ function format (value, type, lng, options = {}) {
   }
   if (['date'].includes(type)) {
     const setting = defaultsDeep(options.date, cfg.format.date)
-    return new Intl.DateTimeFormat(lng, setting).format(value)
+    return new Intl.DateTimeFormat(lng, setting).format(new Date(value))
   }
   if (['time'].includes(type)) {
     const setting = defaultsDeep(options.time, cfg.format.time)
-    return new Intl.DateTimeFormat(lng, setting).format(value)
+    return new Intl.DateTimeFormat(lng, setting).format(new Date(`1970-01-01T${value}Z`))
   }
   if (['object'].includes(type)) return JSON.stringify(value)
   return value
