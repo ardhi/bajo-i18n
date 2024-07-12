@@ -1,6 +1,6 @@
 {
   "name": "bajo-i18n",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "Internationalization/localization for Bajo Framework",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/ardhi/bajo-i18n#readme",
   "dependencies": {
-    "i18next": "^23.2.8"
+    "i18next": "^23.11.5"
   }
 }
