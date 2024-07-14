@@ -1,4 +1,21 @@
 {
   "[%s] Internationalization is active now, locale: %s": "[%s] Internasionalisasi sekarang sudah aktif, lokal: %s",
-  "Please choose one of these locales:": "Mohon pilih salah satu dari lokal berikut ini:"
+  "Please choose one of these locales:": "Mohon pilih salah satu dari lokal berikut ini:",
+  "Please choose one of these namespaces:": "Mohon pilih salah satu dari namespace ini:",
+  "[%s] Collecting %s...": "[%s] Mengumpulkan %s...",
+  "[%s] - Collect %s: '%s'": "[%s] - %s terkumpul: '%s'",
+  "[%s] %s collected: %d": "[%s] Total %s terkumpul: %d",
+  "connections": "koneksi",
+  "connection": "koneksi",
+  "events": "event",
+  "event": "event",
+  "Unknown connection '%s'": "Koneksi '%s' tidak dikenal",
+  "[%s] Connection '%s' error: %s": "[%s] Koneksi '%s' kesalahan: %s",
+  "[%s] Connection '%s' is %s": "[%s] Koneksi '%s' %s",
+  "connected": "telah tersambung",
+  "disconnected": "telah terputus",
+  "closed": "telah tertutup",
+  "end": "telah selesai",
+  "offline": "offline",
+  "reconnecting": "menyambung kembali"
 }
