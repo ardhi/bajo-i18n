@@ -1,6 +1,7 @@
 {
   "alias": "i18n",
-  "supportedLngs": ["en", "id"],
+  "supportedLngs": ["en-US", "id"],
+  "fallbackLng": "en-US",
   "format": {
     "emptyValue": "",
     "datetime": { "dateStyle": "medium", "timeStyle": "short" },
