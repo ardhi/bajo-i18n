@@ -1,8 +1,9 @@
 async function resource ({ path, args }) {
-  const { importPkg, saveAsDownload } = this.app.bajo
-  const { prettyPrint } = this.app.bajoCli
+  const { importPkg } = this.app.bajo
   const { get, isEmpty, keys, map } = this.app.bajo.lib._
-  const [stripAnsi, select] = await importPkg('bajoCli:strip-ansi', 'bajoCli:@inquirer/select')
+  const { getOutputFormat, writeOutput } = this.app.bajoCli
+  const select = await importPkg('bajoCli:@inquirer/select')
+  const format = getOutputFormat()
   let subPath = args.length === 0 ? '' : `.${args[0].replaceAll(':', '.')}`
   if (isEmpty(subPath)) {
     let choices = map(keys(this.instance.options.resources ?? {}), k => ({ value: k }))
@@ -19,13 +20,9 @@ async function resource ({ path, args }) {
     })
     subPath += isEmpty(ns) ? '' : ('.' + ns)
   }
-  let result = get(this.instance, `options.resources${subPath}`, {})
+  const result = get(this.instance, `options.resources${subPath}`, {})
   this.print.info('Done!')
-  result = this.app.bajo.config.pretty ? (await prettyPrint(result, false, false)) : JSON.stringify(result, null, 2)
-  if (this.app.bajo.config.save) {
-    const file = `/${path}/${isEmpty(subPath) ? 'all' : subPath}.${this.app.bajo.config.pretty ? 'txt' : 'json'}`
-    await saveAsDownload(file, stripAnsi(result))
-  } else console.log(result)
+  await writeOutput(result, path, format)
 }
 
 export default resource
