@@ -1,5 +1,5 @@
 function format (value, type, lng, options = {}) {
-  const { getConfig, defaultsDeep } = this.bajo.helper
+  const { getConfig, defaultsDeep } = this.app.bajo
   const cfg = getConfig('bajoI18N')
   const { emptyValue = cfg.format.emptyValue } = options
   if ([undefined, null].includes(value)) return emptyValue
