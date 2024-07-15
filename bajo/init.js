@@ -4,22 +4,19 @@ import collectResources from '../lib/collect-resource.js'
 
 async function init () {
   const spp = await sprintfPostProcessor.call(this)
-  const { map, uniq, cloneDeep } = this.app.bajo.lib._
-  const config = cloneDeep(this.config)
-  config.lang = this.app.bajo.config.lang
-  config.supportedLngs = uniq(map(this.config.supportedLngs, l => l.split('-')[0]))
-  config.nonExplicitSupportedLngs = true
-  if (!config.supportedLngs.includes(config.lang)) {
-    this.log.warn('Unsupported locale \'%s\', switched to the default one \'%s\'', config.lang, config.fallbackLng)
-    config.lang = config.fallbackLng
+  const { uniq } = this.app.bajo.lib._
+  this.config.lang = this.app.bajo.config.lang
+  this.config.supportedLngs = uniq(this.config.supportedLngs)
+  this.config.nonExplicitSupportedLngs = true
+  if (!this.config.supportedLngs.includes(this.config.lang)) {
+    this.log.warn('Unsupported locale \'%s\', switched to the default one \'%s\'', this.config.lang, this.config.fallbackLng)
+    this.config.lang = this.config.fallbackLng
   }
-  this.config = config
-  this.app.bajo.freeze(this.config)
+  this.config.defaultNS = this.app.bajo.mainNs
+  this.config.fallbackNS = [this.config.defaultNS, this.app.bajo.name, this.name]
   const opts = this.getConfig()
   opts.lng = opts.lang
   await collectResources.call(this, opts)
-  opts.defaultNS = 'main'
-  opts.fallbackNS = ['main', 'bajo', 'bajoI18N']
   await i18next.use(spp).init(opts)
   this.instance = i18next
   this.log.debug('Internationalization is active now, locale: %s', opts.lng)
