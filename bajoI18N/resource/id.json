@@ -14,5 +14,10 @@
   "closed": "telah tertutup",
   "end": "telah selesai",
   "offline": "offline",
-  "reconnecting": "menyambung kembali"
+  "reconnecting": "menyambung kembali",
+  "Only support one of these: %s": "Hanya mendukung satu dari ini: %s",
+  "Api key is missing": "Kunci api tidak ditemukan",
+  "JWT is missing": "JWT tidak ditemukan",
+  "Username is missing": "Nama pengguna tidak ditemukan",
+  "Password is missing": "Kata sandi tidak ditemukan"
 }
