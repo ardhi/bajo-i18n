@@ -13,10 +13,11 @@ async function init () {
     this.config.lang = this.config.fallbackLng
   }
   this.config.defaultNS = this.app.bajo.mainNs
-  this.config.fallbackNS = [this.config.defaultNS, this.app.bajo.name, this.name]
+  this.config.fallbackNS = this.config.fallbackNS ?? []
+  this.config.fallbackNS.unshift(this.config.defaultNS, this.app.bajo.name, this.name)
   const opts = this.getConfig()
   opts.lng = opts.lang
-  await collectResources.call(this, opts)
+  opts.resources = await collectResources.call(this)
   await i18next.use(spp).init(opts)
   this.instance = i18next
   this.log.debug('Internationalization is active now, locale: %s', opts.lng)
