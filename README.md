@@ -6,7 +6,7 @@ Plugin name: **bajoI18N**, alias: **i18n**
 
 > <br />**Attention**: I do NOT accept any pull request at the moment, thanks!<br /><br />
 
-The universal translator for [Bajo Framework](https://github.com/ardhi/bajo).
+The I18N Localization & Internationalization for [Bajo](https://github.com/ardhi/bajo).
 
 ## Installation
 
