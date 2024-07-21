@@ -19,5 +19,7 @@
   "Api key is missing": "Kunci api tidak ditemukan",
   "JWT is missing": "JWT tidak ditemukan",
   "Username is missing": "Nama pengguna tidak ditemukan",
-  "Password is missing": "Kata sandi tidak ditemukan"
+  "Password is missing": "Kata sandi tidak ditemukan",
+  "Aborted!": "Dibatalkan!",
+  "Done!": "Selesai!"
 }
