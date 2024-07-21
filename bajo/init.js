@@ -3,7 +3,7 @@ import sprintfPostProcessor from '../lib/sprintf-post-processor.js'
 import collectResources from '../lib/collect-resource.js'
 
 async function init () {
-  const spp = await sprintfPostProcessor.call(this)
+  const spp = sprintfPostProcessor.call(this)
   const { uniq } = this.app.bajo.lib._
   this.config.lang = this.app.bajo.config.lang
   this.config.supportedLngs = uniq(this.config.supportedLngs)
