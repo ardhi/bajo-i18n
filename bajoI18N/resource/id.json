@@ -21,5 +21,6 @@
   "Username is missing": "Nama pengguna tidak ditemukan",
   "Password is missing": "Kata sandi tidak ditemukan",
   "Aborted!": "Dibatalkan!",
-  "Done!": "Selesai!"
+  "Done!": "Selesai!",
+  "Error": "Kesalahan"
 }
