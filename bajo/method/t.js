@@ -1,5 +1,5 @@
 function t (...params) {
-  return this.instance ? this.instance.t(...params) : params
+  return this.instance.t(...params)
 }
 
 export default t
