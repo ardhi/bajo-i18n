@@ -22,5 +22,14 @@
   "Password is missing": "Kata sandi tidak ditemukan",
   "Aborted!": "Dibatalkan!",
   "Done!": "Selesai!",
-  "Error": "Kesalahan"
+  "Error": "Kesalahan",
+  "langEnUs": "Bahasa Inggris Amerika",
+  "langId": "Bahasa Indonesia",
+  "Bright Mode": "Mode Terang",
+  "Dark Mode": "Mode Gelap",
+  "Go Back Home": "Kembali ke Beranda",
+  "Reset": "Reset",
+  "Submit": "Kirim",
+  "Upload": "Unggah",
+  "Home": "Beranda"
 }
