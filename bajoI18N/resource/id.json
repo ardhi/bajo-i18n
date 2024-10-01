@@ -54,5 +54,16 @@
   "Fri": "Jum",
   "Sat": "Sab",
   "Back": "Kembali",
-  "Forward": "Maju"
+  "Forward": "Maju",
+  "Day": "Hari",
+  "Weekends": "Akhir Minggu",
+  "Working Days": "Hari Kerja",
+  "Search": "Cari",
+  "Prev": "Sebelumnya",
+  "Next": "Berikutnya",
+  "Large": "Besar",
+  "Small": "Kecil",
+  "Center": "Tengah",
+  "Height": "Tinggi",
+  "Source": "Sumber"
 }
