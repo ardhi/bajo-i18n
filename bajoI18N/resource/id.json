@@ -65,5 +65,10 @@
   "Small": "Kecil",
   "Center": "Tengah",
   "Height": "Tinggi",
-  "Source": "Sumber"
+  "Source": "Sumber",
+  "OK": "Oke",
+  "Cancel": "Batal",
+  "Information": "Informasi",
+  "Warning": "Perhatian",
+  "Danger": "Bahaya"
 }

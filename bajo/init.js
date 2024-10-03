@@ -8,8 +8,11 @@ async function init () {
     this.config.lang = this.config.fallbackLng
   }
   this.config.defaultNS = this.app.bajo.mainNs
+  this.config.fallbackNS = this.app.bajo.pluginNames // TODO: ordering by level
+  /*
   this.config.fallbackNS = this.config.fallbackNS ?? []
   this.config.fallbackNS.unshift(this.config.defaultNS, this.app.bajo.name, this.name)
+  */
 }
 
 export default init
