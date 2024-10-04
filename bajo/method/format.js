@@ -29,7 +29,8 @@ function format (value, type, lng, options = {}) {
     const setting = defaultsDeep(options.time, this.config.format.time)
     return new Intl.DateTimeFormat(lng, setting).format(new Date(`1970-01-01T${value}Z`))
   }
-  if (['array', 'object'].includes(type)) return JSON.stringify(value)
+  if (['array'].includes(type)) return value.join(', ')
+  if (['object'].includes(type)) return JSON.stringify(value)
   return value
 }
 
