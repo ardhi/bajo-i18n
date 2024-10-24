@@ -1,7 +1,7 @@
 function format (value, type, lng, options = {}) {
   const { defaultsDeep } = this.app.bajo
   const { emptyValue = this.config.format.emptyValue } = options
-  if ([undefined, null].includes(value)) return emptyValue
+  if ([undefined, null, ''].includes(value)) return emptyValue
   if (type === 'auto') {
     if (value instanceof Date) type = 'datetime'
   }
@@ -17,12 +17,8 @@ function format (value, type, lng, options = {}) {
     const setting = defaultsDeep(options.float, this.config.format.float)
     return new Intl.NumberFormat(lng, setting).format(value)
   }
-  if (['datetime'].includes(type)) {
-    const setting = defaultsDeep(options.datetime, this.config.format.datetime)
-    return new Intl.DateTimeFormat(lng, setting).format(value)
-  }
-  if (['date'].includes(type)) {
-    const setting = defaultsDeep(options.date, this.config.format.date)
+  if (['datetime', 'date'].includes(type)) {
+    const setting = defaultsDeep(options[type], this.config.format[type])
     return new Intl.DateTimeFormat(lng, setting).format(new Date(value))
   }
   if (['time'].includes(type)) {

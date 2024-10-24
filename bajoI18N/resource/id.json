@@ -23,10 +23,9 @@
   "Aborted!": "Dibatalkan!",
   "Done!": "Selesai!",
   "Error": "Kesalahan",
+  "Language": "Bahasa",
   "langEnUs": "Bahasa Inggris Amerika",
   "langId": "Bahasa Indonesia",
-  "Bright Mode": "Mode Terang",
-  "Dark Mode": "Mode Gelap",
   "Goto Home": "Ke Beranda",
   "Copy to Clipboard": "Kopi ke Papan Tempel",
   "Clear": "Bersihkan",
@@ -70,5 +69,15 @@
   "Cancel": "Batal",
   "Information": "Informasi",
   "Warning": "Perhatian",
-  "Danger": "Bahaya"
+  "Danger": "Bahaya",
+  "Apply": "Terapkan",
+  "Options": "Opsi-opsi",
+  "Confirmation": "Konfirmasi",
+  "Statistics": "Statistik",
+  "General": "Umum",
+  "Meta": "Meta",
+  "Copied!": "Tertempel!",
+  "Name": "Nama",
+  "Role": "Peran",
+  "Phone": "Telpon"
 }
