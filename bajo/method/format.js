@@ -14,6 +14,8 @@ function format (value, type, lng, options = {}) {
   if (['float', 'double'].includes(type)) {
     value = parseFloat(value)
     if (isNaN(value)) return emptyValue
+    if (this.app.bajoSpatial && options.latitude) return this.app.bajoSpatial.latToDms(value)
+    if (this.app.bajoSpatial && options.longitude) return this.app.bajoSpatial.lngToDms(value)
     const setting = defaultsDeep(options.float, this.config.format.float)
     return new Intl.NumberFormat(lng, setting).format(value)
   }
