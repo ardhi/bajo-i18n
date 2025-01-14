@@ -1,5 +1,4 @@
 {
-  "alias": "i18n",
   "supportedLngs": ["en-US", "id"],
   "fallbackLng": "en-US",
   "fallbackNS": [],
