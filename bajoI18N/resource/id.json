@@ -79,5 +79,11 @@
   "Copied!": "Tertempel!",
   "Name": "Nama",
   "Role": "Peran",
-  "Phone": "Telpon"
+  "Phone": "Telpon",
+  "second": "detik",
+  "minute": "menit",
+  "hour": "jam",
+  "day": "hari",
+  "month": "bulan",
+  "year": "tahun"
 }
