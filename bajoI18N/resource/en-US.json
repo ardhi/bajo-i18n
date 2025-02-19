@@ -75,5 +75,6 @@
   "task": "Task",
   "allRightsReserved": "All rights reserved",
   "date": "Date",
-  "status": "Status"
+  "status": "Status",
+  "missingPlugin%s": "Plugin '%s' tidak ditemukan"
 }

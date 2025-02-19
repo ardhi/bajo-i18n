@@ -96,5 +96,6 @@
   "task": "Pekerjaan",
   "allRightsReserved": "Hak cipta dilindungi Undang-undang",
   "date": "Tanggal",
-  "status": "Status"
+  "status": "Status",
+  "missingPlugin%s": "Plugin '%s' is missing"
 }
