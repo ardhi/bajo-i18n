@@ -1,5 +1,5 @@
 async function init () {
-  const { uniq } = this.app.bajo.lib._
+  const { uniq } = this.lib._
   this.config.lang = this.app.bajo.config.lang
   this.config.supportedLngs = uniq(this.config.supportedLngs)
   // this.config.nonExplicitSupportedLngs = true

@@ -1,6 +1,6 @@
 async function resource ({ path, args }) {
   const { importPkg } = this.app.bajo
-  const { get, isEmpty, keys, map } = this.app.bajo.lib._
+  const { get, isEmpty, keys, map } = this.lib._
   const { getOutputFormat, writeOutput } = this.app.bajoCli
   const select = await importPkg('bajoCli:@inquirer/select')
   const format = getOutputFormat()
